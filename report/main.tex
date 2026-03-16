@@ -1,0 +1,118 @@
+\documentclass[12pt]{article}
+
+% Page geometry — full-width single column
+\usepackage[margin=1in]{geometry}
+
+% Core packages
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[table]{xcolor}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{url}
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue, bookmarks=true, bookmarksopen=true]{hyperref}
+\usepackage{cleveref}
+\usepackage{lipsum}
+
+% Bibliography
+\usepackage[numbers]{natbib}
+
+% Section spacing
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{10pt plus 2pt minus 2pt}{8pt plus 1pt}
+\titlespacing*{\subsection}{0pt}{6pt plus 1pt minus 1pt}{6pt plus 1pt}
+
+% Paragraph formatting
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt}
+\raggedbottom
+
+% ---------------------------------------------------------------
+\begin{document}
+
+\title{\textbf{A Statistical Analysis of NBA Clutch Performance}}
+
+\author{
+    Sanchit Kaul \quad Krishna Karthik \quad Adesh Jothi Prasanna \\[4pt]
+    Devarchith Parashara Batchu
+}
+
+\date{University of California, Davis}
+
+\maketitle
+\thispagestyle{plain}
+
+% ---------------------------------------------------------------
+% Contributions
+% ---------------------------------------------------------------
+\input{sections/sec-contributions}
+
+% ---------------------------------------------------------------
+% Abstract
+% ---------------------------------------------------------------
+\begin{abstract}
+\input{sections/sec-abstract}
+\end{abstract}
+
+% ---------------------------------------------------------------
+% Main Sections
+% ---------------------------------------------------------------
+\input{sections/sec-introduction}
+\input{sections/sec-methods}
+\input{sections/sec-results}
+\input{sections/sec-summary}
+
+% ---------------------------------------------------------------
+% List of Figures and Tables
+% ---------------------------------------------------------------
+% References
+% ---------------------------------------------------------------
+\bibliographystyle{plainnat}
+\nocite{*}
+\bibliography{references}
+
+% ---------------------------------------------------------------
+\newpage
+\section{List of Figures and Tables}
+
+\begin{table}[ht]
+    \centering
+    \caption{Summary of all figures, source scripts, and associated research questions.}
+    \label{tab:figures}
+    \renewcommand{\arraystretch}{1.4}
+    \small
+    \begin{tabular}{@{} c l p{5.5cm} l c @{}}
+        \toprule
+        \textbf{Fig.} & \textbf{Chart Type} & \textbf{Description} & \textbf{Script} & \textbf{RQ} \\
+        \midrule
+        1 & Scatter plot   & Reg-season win\% vs clutch win\%                        & rq1\_plots.py                        & RQ1 \\
+        2 & Bar chart      & Clutch win\% minus reg-season win\%                     & rq1\_plots.py                        & RQ1 \\
+        3 & Heatmap        & Pearson correlation (11 clutch variables)              & rq2\_plots.py                        & RQ2 \\
+        4 & Scatter plot   & Clutch eFG\% vs clutch win\%                            & rq2\_scatter\_quadrant\_plots.py     & RQ2 \\
+        5 & Quadrant plot  & Clutch eFG\% vs clutch TOV\% with mean lines            & rq2\_scatter\_quadrant\_plots.py     & RQ2 \\
+        6 & Dot plot       & Top 10 vs bottom 10 eFG\%, TOV\%, FT\%             & rq2\_dot\_plot.py                    & RQ2 \\
+        7 & Slope chart    & Reg-season vs clutch FG\%                     & rq3\_plots.py                        & RQ3 \\
+        8 & Dumbbell plot  & Reg-season vs clutch 3P\%                     & rq3\_3pct\_plot.py                   & RQ3 \\
+        9 & Slope chart    & Reg-season vs clutch FT\%                     & rq3\_plots.py                        & RQ3 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \caption{Summary of all tables in the report.}
+    \label{tab:tables}
+    \renewcommand{\arraystretch}{1.4}
+    \small
+    \begin{tabular}{@{} c p{7cm} l @{}}
+        \toprule
+        \textbf{Table} & \textbf{Description} & \textbf{Section} \\
+        \midrule
+        1 & Columns retained the source files and prefix applied after renaming & Methods \\
+        2 & Summary of figures, source scripts, and the associated research questions & List of Figures and Tables \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\end{document}
